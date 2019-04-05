@@ -63,7 +63,7 @@ if(isset($_SESSION['election_id']) && isset($_SESSION['total_voters'])){
 
             <div class="row">
               <div class="col-md-12">
-                <button type="submit" class="btn btn-primary btn-lg btn-block btn btn-success" name="next_button_tokens">Next</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block btn btn-success" name="next_button_tokens" onclick="userAction()">Next</button>
               </div>
             </div>
 
@@ -250,6 +250,9 @@ if(isset($_POST['next_button_tokens'])){
     $handler = fopen('Election.sol', 'w');
     fwrite($handler, $election_contract);
 
+   // echo "<script>userAction()</script>";
+
+
   } else {
     echo "<script>alert('Error in adding voters.')</script>";
   }
@@ -259,3 +262,13 @@ if(isset($_POST['next_button_tokens'])){
 }
 
 ?>
+
+<script>
+
+  const userAction = async () => {
+      const response = await fetch('http://localhost:3002/deploy_contract');
+      const myJson = await response.json();
+      console.log(myJson);
+    }
+
+</script>

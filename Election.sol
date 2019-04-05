@@ -3,13 +3,13 @@
     
     contract Election {
       
-      uint public election_id = 3;
-      string public election_name = "ACM Executive Body";
-      string public election_date = "2018-01-01";
-      string public election_time = "10:10:00";
-      int public election_duration = 4;
+      uint public election_id = 5;
+      string public election_name = "NED Academy Elections";
+      string public election_date = "2018-01-02";
+      string public election_time = "23:58:00";
+      int public election_duration = 12;
       string public election_secret_key = "shsgndnsfbsnkn3k4bb4jcsm_ndhh3&9n-4ncbb";
-      int public total_posts = 3;
+      int public total_posts = 2;
       int public total_voters = 2;
 
       uint public candidatesCount = 0;
@@ -59,6 +59,6 @@
 
       constructor() public {
 
-    addPost("President");addCandidate("Usman",0);addCandidate("Naveed",0);addPost("Vice President");addCandidate("Haiqa",1);addCandidate("Areeba",1);addPost("Web Master");addCandidate("Adil",2);addVoter("Adil","adilsachwani@gmail.com","13dfsfsfsffs");addVoter("Naveed","naveed@live.com","hdsjdjnskdsm");addVoter("Adil","adilsachwani@gmail.com","13dfsfsfsffs");addVoter("Naveed","naveed@live.com","hdsjdjnskdsm");addVoter("Adil","adilsachwani@gmail.com","13dfsfsfsffs");addVoter("Naveed","naveed@live.com","hdsjdjnskdsm");addVoter("","","");addVoter("","","");
+    addPost("President");addCandidate("Amna",0);addCandidate("Rija",0);addPost("Vice President");addCandidate("Surman",1);addVoter("Naveed","naveed@gmail.com","jjsuihsdkksdksdnk");addVoter("Adil","adil@gmail.com","ldsjknfnksnfsnksfnksnfs");addVoter("Naveed","naveed@gmail.com","jjsuihsdkksdksdnk");addVoter("Adil","adil@gmail.com","ldsjknfnksnfsnksfnksnfs");addVoter("Naveed","naveed@gmail.com","jjsuihsdkksdksdnk");addVoter("Adil","adil@gmail.com","ldsjknfnksnfsnksfnksnfs");addVoter("Naveed","naveed@gmail.com","jjsuihsdkksdksdnk");addVoter("Adil","adil@gmail.com","ldsjknfnksnfsnksfnksnfs");addVoter("","","");addVoter("","","");addVoter("Adil","adilsachwani@gmail.com","13dfsfsfsffs");addVoter("Amna","naveed@live.com","hdsjdjnskdsm");
         }
       }
