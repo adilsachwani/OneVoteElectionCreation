@@ -63,7 +63,7 @@ if(isset($_SESSION['election_id']) && isset($_SESSION['total_voters'])){
 
             <div class="row">
               <div class="col-md-12">
-                <button type="submit" class="btn btn-primary btn-lg btn-block btn btn-success" name="next_button_tokens" onclick="userAction()">Next</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block btn btn-success" name="next_button_tokens" onclick="userAction()">Submit</button>
               </div>
             </div>
 
