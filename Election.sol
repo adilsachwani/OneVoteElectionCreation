@@ -1,16 +1,17 @@
 
     pragma solidity >=0.4.22 <0.6.0;
+    pragma experimental ABIEncoderV2;
     
     contract Election {
       
-      uint public election_id = 5;
-      string public election_name = "NED Academy Elections";
-      string public election_date = "2018-01-02";
-      string public election_time = "23:58:00";
-      int public election_duration = 12;
+      uint public election_id = 7;
+      string public election_name = "Naveed Testing ";
+      string public election_date = "2019-12-30";
+      string public election_time = "00:00:00";
+      int public election_duration = 1;
       string public election_secret_key = "shsgndnsfbsnkn3k4bb4jcsm_ndhh3&9n-4ncbb";
       int public total_posts = 2;
-      int public total_voters = 2;
+      int public total_voters = 5;
 
       uint public candidatesCount = 0;
       uint public postsCount = 0;
@@ -57,8 +58,12 @@
         voters.push(v);
       }
 
+       function getPosts() public view returns(string[] memory){
+        return posts;
+      }
+
       constructor() public {
 
-    addPost("President");addCandidate("Amna",0);addCandidate("Rija",0);addPost("Vice President");addCandidate("Surman",1);addVoter("Naveed","naveed@gmail.com","jjsuihsdkksdksdnk");addVoter("Adil","adil@gmail.com","ldsjknfnksnfsnksfnksnfs");addVoter("Naveed","naveed@gmail.com","jjsuihsdkksdksdnk");addVoter("Adil","adil@gmail.com","ldsjknfnksnfsnksfnksnfs");addVoter("Naveed","naveed@gmail.com","jjsuihsdkksdksdnk");addVoter("Adil","adil@gmail.com","ldsjknfnksnfsnksfnksnfs");addVoter("Naveed","naveed@gmail.com","jjsuihsdkksdksdnk");addVoter("Adil","adil@gmail.com","ldsjknfnksnfsnksfnksnfs");addVoter("","","");addVoter("","","");addVoter("Adil","adilsachwani@gmail.com","13dfsfsfsffs");addVoter("Amna","naveed@live.com","hdsjdjnskdsm");
+    addPost("chairman");addCandidate("naveed",0);addCandidate("naveeda",0);addPost("vice chairman");addCandidate("adil",1);addCandidate("adila",1);addVoter("n","n2@g.com","123");addVoter("a","n1@g.com","123");addVoter("v","n@g.com","123");addVoter("e","n@g.com","123");addVoter("d","n@g.com","123");addVoter("n","n2@g.com","123");addVoter("a","n1@g.com","123");addVoter("v","n@g.com","123");addVoter("e","n@g.com","123");addVoter("d","n@g.com","123");addVoter("n","n2@g.com","123");addVoter("a","n1@g.com","123");addVoter("v","n@g.com","123");addVoter("e","n@g.com","123");addVoter("d","n@g.com","123");addVoter("","","");addVoter("","","");addVoter("","","");addVoter("","","");addVoter("","","");addVoter("naveed","n2@g.com","123");addVoter("naveedd","n1@g.com","123");addVoter("naveeddd","n@g.com","123789");addVoter("e","n@g.com","123");addVoter("d","n@g.com","123");
         }
       }

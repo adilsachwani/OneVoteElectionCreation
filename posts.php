@@ -123,7 +123,7 @@ if(isset($_POST['next_button_candidates'])){
   $_SESSION['post_titles'] = $post_titles;
   $_SESSION['post_total_candidates'] = $post_total_candidates;
 
-  echo "<script>window.location = 'http://localhost/onevote/candidates.php'</script>";
+  echo "<script>window.location = 'http://localhost:81/onevote/candidates.php'</script>";
 
 }
 

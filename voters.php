@@ -121,6 +121,7 @@ if(isset($_POST['next_button_tokens'])){
     
     $election_contract = '
     pragma solidity >=0.4.22 <0.6.0;
+    pragma experimental ABIEncoderV2;
     
     contract Election {
       
@@ -176,6 +177,10 @@ if(isset($_POST['next_button_tokens'])){
         votersCount++;
         Voter memory v = Voter(_name , _email, _public_key, false);
         voters.push(v);
+      }
+
+       function getPosts() public view returns(string[] memory){
+        return posts;
       }
 
       constructor() public {
