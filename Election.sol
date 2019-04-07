@@ -4,14 +4,14 @@
     
     contract Election {
       
-      uint public election_id = 8;
-      string public election_name = "test123";
-      string public election_date = "2019-12-31";
-      string public election_time = "12:58:00";
+      uint public election_id = 6;
+      string public election_name = "Testing1";
+      string public election_date = "2019-01-01";
+      string public election_time = "14:00:00";
       int public election_duration = 1;
-      string public election_secret_key = "shsgndnsfbsnkn3k4bb4jcsm_ndhh3&9n-4ncbb";
+      string public election_secret_key = "";
       int public total_posts = 2;
-      int public total_voters = 2;
+      int public total_voters = 3;
 
       uint public candidatesCount = 0;
       uint public postsCount = 0;
@@ -72,6 +72,6 @@
 
       constructor() public {
 
-    addPost("President");addCandidate("Obaid",0);addCandidate("khurra",0);addPost("Vice President");addCandidate("atif",1);addCandidate("adhani",1);addVoter("naveed","n2@g.com","123456");addVoter("naveedd","n1@g.com","");addVoter("naveed","n2@g.com","123456");addVoter("naveedd","n1@g.com","");
+    addPost("President");addCandidate("Obaid",0);addCandidate("khurram",0);addPost("President");addCandidate("Obaid",1);addCandidate("khurram",1);addPost("Vice President");addCandidate("adil",2);addCandidate("naveed",2);addPost("Vice President");addCandidate("adil",3);addCandidate("naveed",3);addVoter("naveed","n2@g.com","123");addVoter("adil","n1@g.com","123");addVoter("obaid","n@g.com","123");
         }
       }

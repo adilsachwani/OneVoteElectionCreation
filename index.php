@@ -114,12 +114,11 @@ if(isset($_POST['next_button_posts'])){
   $election_date = $_POST['election_date'];
   $election_time = $_POST['election_time'];
   $election_duration = $_POST['election_duration'];
-  $election_secret_key = "shsgndnsfbsnkn3k4bb4jcsm_ndhh3&9n-4ncbb";
   $total_posts = $_POST['total_posts'];
   $total_voters = $_POST['total_voters'];
 
   //election basic details
-  $election_details_query = "INSERT INTO election(election_title, election_date, election_time, election_duration, election_secret_key, total_posts, total_voters) VALUES ('$election_title','$election_date', '$election_time', '$election_duration', '$election_secret_key', '$total_posts', '$total_voters')";
+  $election_details_query = "INSERT INTO election(election_title, election_date, election_time, election_duration,total_posts, total_voters) VALUES ('$election_title','$election_date', '$election_time', '$election_duration', '$total_posts', '$total_voters')";
 
   $error = mysqli_error($onevote_db);
   echo $error;
