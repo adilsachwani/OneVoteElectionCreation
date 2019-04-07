@@ -63,7 +63,7 @@ if(isset($_SESSION['election_id']) && isset($_SESSION['total_voters'])){
 
             <div class="row">
               <div class="col-md-12">
-                <button type="submit" class="btn btn-primary btn-lg btn-block btn btn-success" name="next_button_tokens" onclick="userAction()">Submit</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block btn btn-success" name="next_button_tokens" >Submit</button>
               </div>
             </div>
 
@@ -183,6 +183,14 @@ if(isset($_POST['next_button_tokens'])){
         return posts;
       }
 
+      function getCandidates() public view returns(Candidate[] memory){
+        return candidates;
+      }
+
+      function getVoters() public view returns(Voter[] memory){
+        return voters;
+      }
+
       constructor() public {
 
     ';
@@ -254,6 +262,7 @@ if(isset($_POST['next_button_tokens'])){
 
     $handler = fopen('Election.sol', 'w');
     fwrite($handler, $election_contract);
+    echo "<script>window.location = 'http://localhost:81/onevote/deploy.php'</script>";
 
    // echo "<script>userAction()</script>";
 
@@ -268,12 +277,3 @@ if(isset($_POST['next_button_tokens'])){
 
 ?>
 
-<script>
-
-  const userAction = async () => {
-      const response = await fetch('http://localhost:3002/deploy_contract');
-      const myJson = await response.json();
-      console.log(myJson);
-    }
-
-</script>

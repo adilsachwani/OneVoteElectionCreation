@@ -4,14 +4,14 @@
     
     contract Election {
       
-      uint public election_id = 7;
-      string public election_name = "Naveed Testing ";
-      string public election_date = "2019-12-30";
-      string public election_time = "00:00:00";
+      uint public election_id = 8;
+      string public election_name = "test123";
+      string public election_date = "2019-12-31";
+      string public election_time = "12:58:00";
       int public election_duration = 1;
       string public election_secret_key = "shsgndnsfbsnkn3k4bb4jcsm_ndhh3&9n-4ncbb";
       int public total_posts = 2;
-      int public total_voters = 5;
+      int public total_voters = 2;
 
       uint public candidatesCount = 0;
       uint public postsCount = 0;
@@ -62,8 +62,16 @@
         return posts;
       }
 
+      function getCandidates() public view returns(Candidate[] memory){
+        return candidates;
+      }
+
+      function getVoters() public view returns(Voter[] memory){
+        return voters;
+      }
+
       constructor() public {
 
-    addPost("chairman");addCandidate("naveed",0);addCandidate("naveeda",0);addPost("vice chairman");addCandidate("adil",1);addCandidate("adila",1);addVoter("n","n2@g.com","123");addVoter("a","n1@g.com","123");addVoter("v","n@g.com","123");addVoter("e","n@g.com","123");addVoter("d","n@g.com","123");addVoter("n","n2@g.com","123");addVoter("a","n1@g.com","123");addVoter("v","n@g.com","123");addVoter("e","n@g.com","123");addVoter("d","n@g.com","123");addVoter("n","n2@g.com","123");addVoter("a","n1@g.com","123");addVoter("v","n@g.com","123");addVoter("e","n@g.com","123");addVoter("d","n@g.com","123");addVoter("","","");addVoter("","","");addVoter("","","");addVoter("","","");addVoter("","","");addVoter("naveed","n2@g.com","123");addVoter("naveedd","n1@g.com","123");addVoter("naveeddd","n@g.com","123789");addVoter("e","n@g.com","123");addVoter("d","n@g.com","123");
+    addPost("President");addCandidate("Obaid",0);addCandidate("khurra",0);addPost("Vice President");addCandidate("atif",1);addCandidate("adhani",1);addVoter("naveed","n2@g.com","123456");addVoter("naveedd","n1@g.com","");addVoter("naveed","n2@g.com","123456");addVoter("naveedd","n1@g.com","");
         }
       }
