@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>OneVote - Create Election</title>
+
+    <link rel="icon" href="img/icon.png">
  
   </head>
   
@@ -20,7 +22,11 @@
       <div class="row">
         
         <div class="col-md-1"></div>
+        
         <div class="col-md-10">
+
+          <br><br><br>
+          <p style="text-align: center"><img src="img/logo.png" class="center-block"></p>
 
           <br><h1>Create Election</h1>
 
@@ -130,7 +136,7 @@ if(isset($_POST['next_button_posts'])){
     $_SESSION['election_id'] = $election_id;
     $_SESSION['total_posts'] = $total_posts;
     $_SESSION['total_voters'] = $total_voters;
-    echo "<script>window.location = 'http://localhost:81/onevote/posts.php'</script>";
+    echo "<script>window.location = 'http://localhost/onevote/posts.php'</script>";
   }
   else {
     echo "<script>alert('Error in adding basic details.')</script>";

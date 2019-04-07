@@ -27,6 +27,8 @@ include("db.php");
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>OneVote - Create Election</title>
+
+    <link rel="icon" href="img/icon.png">
  
   </head>
   
@@ -103,20 +105,15 @@ if(isset($_POST['next_button_voters'])){
       $candidate_name = $_POST['candidate_name'.($i).'_'.($j)];
       $candidates_query .= '("' . $candidate_name . '",' . $nomination_ids[$i] . '),';
 
-      echo "i: " . $i ;
-      echo "j: " . $j  . "<br>";
-
     }
 
   }
-  
-  echo $candidates_query;
 
   $error = mysqli_error($onevote_db);
   echo $error;
   
   if(mysqli_query($onevote_db, rtrim($candidates_query,','))){
-    echo "<script>window.location = 'http://localhost:81/onevote/voters.php'</script>";
+    echo "<script>window.location = 'http://localhost/onevote/voters.php'</script>";
   }
   else {
     echo "<script>alert('Error in adding candidates.')</script>";

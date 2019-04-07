@@ -4,14 +4,13 @@
     
     contract Election {
       
-      uint public election_id = 6;
-      string public election_name = "Testing1";
-      string public election_date = "2019-01-01";
-      string public election_time = "14:00:00";
-      int public election_duration = 1;
-      string public election_secret_key = "";
-      int public total_posts = 2;
-      int public total_voters = 3;
+      uint public election_id = 11;
+      string public election_name = "General Elections 2018";
+      string public election_date = "2019-11-26";
+      string public election_time = "12:59:00";
+      int public election_duration = 4;
+      int public total_posts = 1;
+      int public total_voters = 1;
 
       uint public candidatesCount = 0;
       uint public postsCount = 0;
@@ -72,6 +71,6 @@
 
       constructor() public {
 
-    addPost("President");addCandidate("Obaid",0);addCandidate("khurram",0);addPost("President");addCandidate("Obaid",1);addCandidate("khurram",1);addPost("Vice President");addCandidate("adil",2);addCandidate("naveed",2);addPost("Vice President");addCandidate("adil",3);addCandidate("naveed",3);addVoter("naveed","n2@g.com","123");addVoter("adil","n1@g.com","123");addVoter("obaid","n@g.com","123");
+    addPost("shhsh");addCandidate("hdhdhdh",0);addCandidate("hdhdhdh",0);addCandidate("hdhdhdh",0);addCandidate("hdhdhdh",0);addCandidate("jdd",0);addCandidate("djdj",0);addCandidate("ndnd",0);addCandidate("ndnd",0);addVoter("jjd","DNNDN","NDNND");addVoter("jjd","DNNDN","NDNND");addVoter("jjd","DNNDN","NDNND");
         }
       }

@@ -22,6 +22,8 @@ include("db.php");
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>OneVote - Create Election</title>
+
+    <link rel="icon" href="img/icon.png">
  
   </head>
   
@@ -123,7 +125,7 @@ if(isset($_POST['next_button_candidates'])){
   $_SESSION['post_titles'] = $post_titles;
   $_SESSION['post_total_candidates'] = $post_total_candidates;
 
-  echo "<script>window.location = 'http://localhost:81/onevote/candidates.php'</script>";
+  echo "<script>window.location = 'http://localhost/onevote/candidates.php'</script>";
 
 }
 

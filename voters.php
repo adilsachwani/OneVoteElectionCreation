@@ -20,6 +20,8 @@ if(isset($_SESSION['election_id']) && isset($_SESSION['total_voters'])){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>OneVote - Create Election</title>
+
+    <link rel="icon" href="img/icon.png">
  
   </head>
   
@@ -115,7 +117,6 @@ if(isset($_POST['next_button_tokens'])){
     $election_date = $get_basic_details['election_date'];
     $election_time = $get_basic_details['election_time'];
     $election_duration = $get_basic_details['election_duration'];
-    $election_secret_key = $get_basic_details['election_secret_key'];
     $election_total_posts = $get_basic_details['total_posts'];
     $election_total_voters = $get_basic_details['total_voters'];
     
@@ -130,7 +131,6 @@ if(isset($_POST['next_button_tokens'])){
       string public election_date = "'.$election_date.'";
       string public election_time = "'.$election_time.'";
       int public election_duration = '.$election_duration.';
-      string public election_secret_key = "'.$election_secret_key.'";
       int public total_posts = '.$election_total_posts.';
       int public total_voters = '.$election_total_voters.';
 
@@ -262,9 +262,7 @@ if(isset($_POST['next_button_tokens'])){
 
     $handler = fopen('Election.sol', 'w');
     fwrite($handler, $election_contract);
-    echo "<script>window.location = 'http://localhost:81/onevote/deploy.php'</script>";
-
-   // echo "<script>userAction()</script>";
+    //echo "<script>window.location = 'http://localhost/onevote/deploy.php'</script>";
 
 
   } else {
