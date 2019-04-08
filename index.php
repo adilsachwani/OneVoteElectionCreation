@@ -28,8 +28,6 @@
           <br><br><br>
           <p style="text-align: center"><img src="img/logo.png" class="center-block"></p>
 
-          <br><h1>Create Election</h1>
-
           <form method="post">
 
             <fieldset>

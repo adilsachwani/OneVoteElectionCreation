@@ -72,7 +72,11 @@ if(isset($_SESSION['election_id']) && isset($_SESSION['total_voters'])){
       document.getElementById("buttons").style.display = "none";
       document.getElementById("promptElection").style.display = "none";
 
-      const response = await fetch('http://localhost:3002/deploy_contract/6');
+      var election_id = "<?php echo $election_id; ?>";
+
+      var link = "http://localhost:3002/deploy_contract/" + election_id;
+
+      const response = await fetch(link);
       const myJson = await response.json();
       console.log(myJson);
       document.getElementById("congratulations").innerHTML = "Congratulations your Election is deployed!";

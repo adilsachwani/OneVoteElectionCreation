@@ -4,13 +4,13 @@
     
     contract Election {
       
-      uint public election_id = 11;
-      string public election_name = "General Elections 2018";
-      string public election_date = "2019-11-26";
-      string public election_time = "12:59:00";
-      int public election_duration = 4;
-      int public total_posts = 1;
-      int public total_voters = 1;
+      uint public election_id = 16;
+      string public election_name = "General Elections 2019";
+      string public election_date = "2019-12-12";
+      string public election_time = "12:30:00";
+      int public election_duration = 12;
+      int public total_posts = 3;
+      int public total_voters = 5;
 
       uint public candidatesCount = 0;
       uint public postsCount = 0;
@@ -71,6 +71,6 @@
 
       constructor() public {
 
-    addPost("shhsh");addCandidate("hdhdhdh",0);addCandidate("hdhdhdh",0);addCandidate("hdhdhdh",0);addCandidate("hdhdhdh",0);addCandidate("jdd",0);addCandidate("djdj",0);addCandidate("ndnd",0);addCandidate("ndnd",0);addVoter("jjd","DNNDN","NDNND");addVoter("jjd","DNNDN","NDNND");addVoter("jjd","DNNDN","NDNND");
+    addPost("Prime Minister");addCandidate("Imran Khan",0);addCandidate("Nawaz Sharif",0);addCandidate("Bilawal Bhutto",0);addPost("President");addCandidate("Arif Alvi",1);addCandidate("Atizaz Ahsan",1);addPost("Finance Minister");addCandidate("Isaq",2);addCandidate("Asad Umar",2);addVoter("Adil Aslam","adilsachwani@gmail.com","jabsbshbdhsbdshbdshdbhsb");addVoter("Naveed Raza","naveed@live.com","sjhdhjssjdsndjsdnjdjsnsdjns");addVoter("Areeba Shoaib","areeba@live.com","hsgshdbsdshdbshdbshdbshdb");addVoter("Rija Asif Butt","rija@live.com","jadjbhhdajndjdbjdbdbdddjbdb");addVoter("Amna Habibi","amna@yahoo.com","jsjdbsdjbsdjbsdjbsjfhjffbfbffbfjjf");
         }
       }
