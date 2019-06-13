@@ -5,6 +5,7 @@ session_start();
 if(isset($_SESSION['election_id']) && isset($_SESSION['total_voters'])){
   $election_id = $_SESSION['election_id'];
   $total_voters = $_SESSION['total_voters'];
+  $total_posts = $_SESSION['total_posts'];
 }
 
 ?>
@@ -140,6 +141,7 @@ if(isset($_POST['next_button_tokens'])){
       
       //Model the candidate
       struct Candidate{
+        uint cadidateId;  
         string name;
         uint voteCount;
         uint postId;
@@ -150,7 +152,7 @@ if(isset($_POST['next_button_tokens'])){
         string name;
         string email;
         string public_key;
-        bool vote;
+        uint[' . $total_posts . '] vote;
       }
       
       //Posts List
@@ -167,15 +169,16 @@ if(isset($_POST['next_button_tokens'])){
         posts.push(_name);
       }
       
-      function addCandidate(string memory _name, uint _postId) private {
+      function addCandidate(uint _candidate_id, string memory _name, uint _postId) private {
         candidatesCount++;
-        Candidate memory c = Candidate(_name , 0, _postId);
+        Candidate memory c = Candidate(_candidate_id, _name , 0, _postId);
         candidates.push(c);
       }
 
       function addVoter(string memory _name, string memory _email, string memory _public_key) private {
+        uint[' . $total_posts . '] memory votes;
         votersCount++;
-        Voter memory v = Voter(_name , _email, _public_key, false);
+        Voter memory v = Voter(_name , _email, _public_key, votes);
         voters.push(v);
       }
 
@@ -208,6 +211,7 @@ if(isset($_POST['next_button_tokens'])){
     $post_details = mysqli_query($onevote_db, $post_query);
 
     $p = 0;
+    $cid = 0;
 
     while($post = mysqli_fetch_array($post_details)){
 
@@ -229,7 +233,8 @@ if(isset($_POST['next_button_tokens'])){
       $candidate_details = mysqli_query($onevote_db, $candidate_query);
 
       while($candidate = mysqli_fetch_array($candidate_details)){
-        $election_contract .= 'addCandidate("'. $candidate['candidate_name'] . '",'. $p . ');';
+        $election_contract .= 'addCandidate(' . $cid . ',"' . $candidate['candidate_name'] . '",' . $p . ');';
+        $cid++;
       }
 
       $p++;
