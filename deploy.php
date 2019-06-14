@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+if(isset($_SESSION['election_id']) && isset($_SESSION['total_voters'])){
+  $election_id = $_SESSION['election_id'];
+  $total_voters = $_SESSION['total_voters'];
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -58,10 +68,13 @@
 <script>
 
   const userActionSubmit = async () => {
+      
       document.getElementById("buttons").style.display = "none";
       document.getElementById("promptElection").style.display = "none";
 
-      var link = "http://localhost:3002/deploy_contract";
+      var election_id = "<?php echo $election_id; ?>";
+      
+      var link = "http://localhost:3002/deploy_contract/" + election_id;
 
       const response = await fetch(link);
       const myJson = await response.json();
@@ -72,7 +85,9 @@
   }  
 
   const userActionCancel = async() => {
+    
     window.location = 'http://localhost/onevote/index.php';
+  
   }
 
 </script>
