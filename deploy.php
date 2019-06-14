@@ -86,7 +86,7 @@ if(isset($_SESSION['election_id']) && isset($_SESSION['total_voters'])){
 
   const userActionCancel = async() => {
     
-    window.location = 'http://localhost/onevote/index.php';
+    window.location = 'http://localhost:81/onevote/index.php';
   
   }
 

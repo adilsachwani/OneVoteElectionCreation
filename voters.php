@@ -132,7 +132,7 @@ if(isset($_POST['next_button_tokens'])){
       string public election_date = "'.$election_date.'";
       string public election_time = "'.$election_time.'";
       int public election_duration = '.$election_duration.';
-      int public total_posts = '.$election_total_posts.';
+      unt public total_posts = '.$election_total_posts.';
       int public total_voters = '.$election_total_voters.';
 
       uint public candidatesCount = 0;
@@ -192,6 +192,18 @@ if(isset($_POST['next_button_tokens'])){
 
       function getVoters() public view returns(Voter[] memory){
         return voters;
+      }
+
+      function castVote(uint postId, uint candidateId, uint voterId) public payable {
+         
+         if(voters[voterId].hasVoted == false){
+          voters[voterId].vote[postId] = candidateId;
+          candidates[candidateId].voteCount++;
+          
+          if(postId == (total_posts - 1)){
+          voters[voterId].hasVoted = true;
+          }
+         }
       }
 
       constructor() public {
@@ -267,7 +279,7 @@ if(isset($_POST['next_button_tokens'])){
 
     $handler = fopen('Election.sol', 'w');
     fwrite($handler, $election_contract);
-    echo "<script>window.location = 'http://localhost/onevote/deploy.php'</script>";
+    echo "<script>window.location = 'http://localhost:81/onevote/deploy.php'</script>";
 
 
   } else {

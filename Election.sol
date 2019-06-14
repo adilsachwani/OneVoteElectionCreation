@@ -4,12 +4,12 @@
     
     contract Election {
       
-      uint public election_id = 22;
-      string public election_name = "Avengers";
-      string public election_date = "2018-11-30";
-      string public election_time = "00:58:00";
-      int public election_duration = 10;
-      int public total_posts = 3;
+      uint public election_id = 19;
+      string public election_name = "Friends";
+      string public election_date = "2019-01-01";
+      string public election_time = "01:00:00";
+      int public election_duration = 1;
+      uint public total_posts = 2;
       int public total_voters = 2;
 
       uint public candidatesCount = 0;
@@ -29,7 +29,8 @@
         string name;
         string email;
         string public_key;
-        uint[3] vote;
+        uint[2] vote;
+        bool hasVoted;
       }
       
       //Posts List
@@ -53,9 +54,9 @@
       }
 
       function addVoter(string memory _name, string memory _email, string memory _public_key) private {
-        uint[3] memory votes;
+        uint[2] memory votes;
         votersCount++;
-        Voter memory v = Voter(_name , _email, _public_key, votes);
+        Voter memory v = Voter(_name , _email, _public_key, votes, false);
         voters.push(v);
       }
 
@@ -71,25 +72,20 @@
         return voters;
       }
 
+     function castVote(uint postId, uint candidateId, uint voterId) public payable {
+         
+         if(voters[voterId].hasVoted == false){
+          voters[voterId].vote[postId] = candidateId;
+          candidates[candidateId].voteCount++;
+          
+          if(postId == (total_posts - 1)){
+          voters[voterId].hasVoted = true;
+          }
+         }
+      }
+
       constructor() public {
 
-    addPost("Best Film");
-    addCandidate(0,"Iron Man 1",0);
-    addCandidate(1,"Spider Man Homecoming",0);
-    addCandidate(2,"Thor Ragnarok",0);
-    
-    addPost("Best Avenger");
-    addCandidate(3,"Thor",1);
-    addCandidate(4,"Captain Marvel",1);
-    addCandidate(5,"Iron Man",1);
-    addCandidate(6,"The Hawkeye",1);
-    
-    addPost("Most Powerful");
-    addCandidate(7,"Thor",2);
-    addCandidate(8,"Scarlet Witch",2);
-    addCandidate(9,"Vision",2);
-
-    addVoter("Amna Ahmed","adilsachwani@gmail.com","0x70a47E1Be460464bE8Dc17F2FDEEf2dC306f274d");
-    addVoter("Rija Asif","adilsachwani@yahoo.com","0x3D1723387A7384C98aBFd42666568F2A3Cf3C4e7");
+    addPost("Best Male Actor");addCandidate(0,"Chandellar",0);addCandidate(1,"Joey",0);addCandidate(2,"Ross",0);addPost("Best Female Actor");addCandidate(3,"Monica",1);addCandidate(4,"Rachelle",1);addCandidate(5,"Pheboe",1);addVoter("Naveed","naveedraza2907@gmail.com","0x13AB9be743BBBd271Ed766Fe20fc5c4Ed8a64F4C");addVoter("adil","adilsachwani@gmail.com","0x15FE5563292d04eD1d23E8F0B5D0a95b5a02d64b");
         }
       }
