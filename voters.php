@@ -132,7 +132,7 @@ if(isset($_POST['next_button_tokens'])){
       string public election_date = "'.$election_date.'";
       string public election_time = "'.$election_time.'";
       int public election_duration = '.$election_duration.';
-      unt public total_posts = '.$election_total_posts.';
+      uint public total_posts = '.$election_total_posts.';
       int public total_voters = '.$election_total_voters.';
 
       uint public candidatesCount = 0;
@@ -153,6 +153,7 @@ if(isset($_POST['next_button_tokens'])){
         string email;
         string public_key;
         uint[' . $total_posts . '] vote;
+        bool hasVoted;
       }
       
       //Posts List
@@ -178,7 +179,7 @@ if(isset($_POST['next_button_tokens'])){
       function addVoter(string memory _name, string memory _email, string memory _public_key) private {
         uint[' . $total_posts . '] memory votes;
         votersCount++;
-        Voter memory v = Voter(_name , _email, _public_key, votes);
+        Voter memory v = Voter(_name , _email, _public_key, votes, false);
         voters.push(v);
       }
 
