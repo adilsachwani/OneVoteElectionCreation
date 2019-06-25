@@ -26,7 +26,7 @@
         <div class="col-md-10">
 
           <br><br><br>
-          <p style="text-align: center"><img src="img/logo.png" class="center-block"></p>
+          <p style="text-align: center"><img src="img/onevote_logo.png" class="center-block"></p>
 
           <form method="post">
 

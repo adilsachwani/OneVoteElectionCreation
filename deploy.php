@@ -35,7 +35,7 @@ if(isset($_SESSION['election_id']) && isset($_SESSION['total_voters'])){
       <div class="col-md-6"><br>
 
         <br><br><br>
-        <p style="text-align: center"><img src="img/logo.png" class="center-block"></p><br>
+        <p style="text-align: center"><img src="img/onevote_logo.png" class="center-block"></p><br>
 
         <h2 id="promptElection" style="text-align: center">Do you really want to deploy the election?</h2>
         <h2 id="congratulations" class="text-success" style="text-align: center"></h2><br>

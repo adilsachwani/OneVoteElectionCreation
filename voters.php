@@ -102,7 +102,7 @@ if(isset($_POST['next_button_tokens'])){
     $voter_email = $_POST['voter_email'.$v];
     $voter_public_key = $_POST['voter_public_key'.$v];
 
-    $voters_query .= '("' . $voter_name . '","' . $voter_email . '","' . $voter_public_key . '",' . $election_id . '),';
+    $voters_query .= '("' . $voter_name . '","' . $voter_email . '","' . strtoupper($voter_public_key) . '",' . $election_id . '),';
 
   }
 
