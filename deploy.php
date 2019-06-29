@@ -23,6 +23,8 @@ if(isset($_SESSION['election_id']) && isset($_SESSION['total_voters'])){
 
   <link rel="icon" href="img/icon.png">
 
+  <script type="text/javascript" src="web3.min.js"></script>
+
 </head>
 
 <body>
@@ -67,6 +69,43 @@ if(isset($_SESSION['election_id']) && isset($_SESSION['total_voters'])){
 
 <script>
 
+  const Web3 = require('web3');
+  var web3;
+  var web3Provider = null;
+  var public_address;
+  var private_key = "32f67a0ea1291a58b9315a16bae0b1ca1c134a30749d5c7710f1e1df47ed88ed";
+
+  const connectWithWeb3 = async() => {
+
+    if (typeof web3 !== 'undefined') {
+      // If a web3 instance is already provided by Meta Mask.
+      web3Provider = web3.currentProvider;
+      web3 = new Web3(web3.currentProvider);
+      console.log("Metamask connected");
+    } else {
+      // Specify default instance if no web3 instance provided
+      web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
+      web3 = new Web3(web3Provider);
+      console.log("ganache connected");
+    }
+
+    getPublicAddress();
+
+  }
+
+  const getPublicAddress = async() => {
+
+        web3.eth.getCoinbase(function(err, account) {
+        if(err === null){
+          public_address = account.toUpperCase();;
+          console.log(account);
+        }
+        else{
+          console.log(err);
+        }
+      })
+  }
+
   const userActionSubmit = async () => {
       
       document.getElementById("buttons").style.display = "none";
@@ -74,9 +113,9 @@ if(isset($_SESSION['election_id']) && isset($_SESSION['total_voters'])){
 
       var election_id = "<?php echo $election_id; ?>";
       
-      var link = "http://localhost:3002/deploy_contract/" + election_id;
+      var url = "http://localhost:3002/deploy_contract/" + public_address + "/" + private_key + "/" + election_id;
 
-      const response = await fetch(link);
+      const response = await fetch(url);
       const myJson = await response.json();
       console.log(myJson);
       document.getElementById("congratulations").innerHTML = "Congratulations your Election is deployed!";
@@ -86,8 +125,10 @@ if(isset($_SESSION['election_id']) && isset($_SESSION['total_voters'])){
 
   const userActionCancel = async() => {
     
-    window.location = 'http://localhost:81/onevote/index.php';
+    window.location = 'http://localhost/onevote/index.php';
   
   }
+
+  window.onload = connectWithWeb3();
 
 </script>

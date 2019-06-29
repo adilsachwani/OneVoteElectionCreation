@@ -4,11 +4,11 @@
     
     contract Election {
       
-      uint public election_id = 23;
-      string public election_name = "World Cup Awards";
-      string public election_date = "2019-12-31";
-      string public election_time = "12:59:00";
-      int public election_duration = 1;
+      uint public election_id = 31;
+      string public election_name = "Filmfare";
+      string public election_date = "2019-12-30";
+      string public election_time = "13:00:00";
+      int public election_duration = 9;
       uint public total_posts = 3;
       int public total_voters = 3;
 
@@ -86,6 +86,6 @@
 
       constructor() public {
 
-    addPost("Best Bowler");addCandidate(0,"Mitchell Starc",0);addCandidate(1,"Jofra Archer",0);addCandidate(2,"Muhammad Amir",0);addPost("Best Batsman");addCandidate(3,"David Warner",1);addCandidate(4,"Aron Finch",1);addCandidate(5,"Joe Root",1);addPost("Best Allrounder");addCandidate(6,"Ben Stoakes",2);addCandidate(7,"Chris Woakes",2);addCandidate(8,"Andre Russell",2);addVoter("Naveed","naveedraza2907@gmail.com","0X13AB9BE743BBBD271ED766FE20FC5C4ED8A64F4C");addVoter("Adil","adilsachwani@gmail.com","0X15FE5563292D04ED1D23E8F0B5D0A95B5A02D64B");addVoter("Areeba","naveedraza97@hotmail.com","0X4E763952427597DD056A0374AACAF7A51CDD5802");
+    addPost("Film");addCandidate(0,"Shawshank Redemption",0);addCandidate(1,"Avengers Endgame",0);addCandidate(2,"Wolf of the Wall Street",0);addCandidate(3,"Titanic",0);addCandidate(4,"Thor Ragnarok",0);addPost("Actor");addCandidate(5,"Tom Holland",1);addCandidate(6,"Al Pacino",1);addCandidate(7,"Leonardo DeCaprio",1);addPost("Actress");addCandidate(8,"Scarlet Johanson",2);addCandidate(9,"Angelina Julie",2);addCandidate(10,"Elizabeth Oleson",2);addVoter("Adil Aslam","adilsachwani@gmail.com","0X70A47E1BE460464BE8DC17F2FDEEF2DC306F274D");addVoter("Naveed Raza","naveedraza2907@gmail.com","0X3D1723387A7384C98ABFD42666568F2A3CF3C4E7");addVoter("Areeba Shoaib","adilsachwani@yahoo.com","0X4F63FA99269BDD3B43E4C8CDB036399A6F0E69DF");
         }
       }
